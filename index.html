@@ -1,9 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-    <title>আমার প্রথম ওয়েবসাইট</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Motors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background-color: #0b0b0b; color: #fff; text-align: center; }
+        .navbar { padding: 20px; font-size: 20px; font-weight: bold; color: #e50914; border-bottom: 1px solid #222; }
+        .hero { padding: 40px 20px; }
+        .badge { border: 1px solid #e50914; padding: 6px 15px; border-radius: 20px; font-size: 12px; color: #aaa; }
+        .hero h1 { font-size: 32px; margin: 20px 0 10px; }
+        .hero p { color: #888; font-size: 12px; letter-spacing: 2px; }
+        .btn { display: inline-block; background: #e50914; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; margin-top: 20px; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 20px; max-width: 800px; margin: auto; }
+        .card { background: #121212; border: 1px solid #222; border-radius: 12px; padding: 15px; text-align: left; }
+        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; background: #222; }
+        .card h3 { font-size: 16px; margin: 10px 0 5px; }
+        .card p { font-size: 12px; color: #777; }
+        .price { margin-top: 10px; font-size: 18px; font-weight: bold; color: #fff; }
+    </style>
 </head>
-<body style="text-align: center; font-family: Arial; margin-top: 50px;">
-    <h1>হ্যালো! এটি আমার ওয়েবসাইট।</h1>
+<body>
+    <div class="navbar">Professor Motors</div>
+    <div class="hero">
+        <span class="badge">● Premium & Budget Friendly</span>
+        <h1>Welcome To<br>Professor Motors</h1>
+        <p>QUALITYFULL & PREMIUM BIKE PARTS</p>
+        <a href="#" class="btn">Visit Our Products</a>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <img src="https://via.placeholder.com/200/111/fff?text=Engine+Guard" alt="Product">
+            <h3>Rtr Engine Guard</h3>
+            <p>High Quality Engine Guard</p>
+            <div class="price">699 TK</div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200/111/fff?text=Tyre+Guard" alt="Product">
+            <h3>Shark Tyre Guard</h3>
+            <p>Universal Tyre Guard</p>
+            <div class="price">399 TK</div>
+        </div>
+    </div>
 </body>
 </html>
