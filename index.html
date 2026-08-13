@@ -3,46 +3,483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor Motors</title>
+    <title>Professor Motors - Premium Bike Accessories</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-        body { background-color: #0b0b0b; color: #fff; text-align: center; }
-        .navbar { padding: 20px; font-size: 20px; font-weight: bold; color: #e50914; border-bottom: 1px solid #222; }
-        .hero { padding: 40px 20px; }
-        .badge { border: 1px solid #e50914; padding: 6px 15px; border-radius: 20px; font-size: 12px; color: #aaa; }
-        .hero h1 { font-size: 32px; margin: 20px 0 10px; }
-        .hero p { color: #888; font-size: 12px; letter-spacing: 2px; }
-        .btn { display: inline-block; background: #e50914; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; margin-top: 20px; font-weight: bold; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 20px; max-width: 800px; margin: auto; }
-        .card { background: #121212; border: 1px solid #222; border-radius: 12px; padding: 15px; text-align: left; }
-        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; background: #222; }
-        .card h3 { font-size: 16px; margin: 10px 0 5px; }
-        .card p { font-size: 12px; color: #777; }
-        .price { margin-top: 10px; font-size: 18px; font-weight: bold; color: #fff; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #080808;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 6%;
+            background: rgba(8, 8, 8, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 42px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 800;
+            color: #e50914;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-icon {
+            font-size: 22px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 35px 20px 20px;
+        }
+
+        .tagline-badge {
+            display: inline-block;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            background: rgba(229, 9, 20, 0.05);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: #888;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #e50914;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        /* Search & Info Section */
+        .search-container {
+            padding: 20px 6%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            background: #121212;
+            border: 1px solid #222;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .product-count {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Feature Cards */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background-color: #111111;
+            border: 1px solid #1a1a1a;
+            padding: 16px 20px;
+            border-radius: 14px;
+        }
+
+        .feature-card h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 12px;
+            margin-left: 22px;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 10px 6% 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .product-card {
+            background-color: #111111;
+            border: 1px solid #1a1a1a;
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 12px;
+        }
+
+        .price-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .old-price {
+            color: #555;
+            text-decoration: line-through;
+            font-size: 12px;
+        }
+
+        .order-btn {
+            background-color: #1f1f1f;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #e50914;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-top: 1px solid #1a1a1a;
+            background: #050505;
+        }
+
+        .footer-logo-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e50914;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .footer-contact a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+        }
+
+        .footer-contact a:hover {
+            color: #e50914;
+        }
+
+        .copyright {
+            color: #444;
+            font-size: 12px;
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .fb-btn { background-color: #1877f2; }
+        .wa-btn { background-color: #25d366; }
+        .tiktok-btn { background-color: #000000; border: 1px solid #333; }
+
     </style>
 </head>
 <body>
-    <div class="navbar">Professor Motors</div>
-    <div class="hero">
-        <span class="badge">● Premium & Budget Friendly</span>
+
+    <!-- Header Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo-box">
+            <img src="https://i.ibb.co/3s6K82B/logo.jpg" alt="Professor Motors Logo" class="nav-logo-img">
+            <span class="logo-text">Professor Motors</span>
+        </a>
+        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="tagline-badge">
+            <span style="color: #e50914; margin-right: 5px;">●</span> Premium, Trendy & Budget Friendly Parts
+        </div>
         <h1>Welcome To<br>Professor Motors</h1>
         <p>QUALITYFULL & PREMIUM BIKE PARTS</p>
-        <a href="#" class="btn">Visit Our Products</a>
-    </div>
-    <div class="grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/200/111/fff?text=Engine+Guard" alt="Product">
-            <h3>Rtr Engine Guard</h3>
-            <p>High Quality Engine Guard</p>
-            <div class="price">699 TK</div>
+        <a href="#products" class="btn-primary">Visit Our Products <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <!-- Search & Highlights -->
+    <section class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search bike accessories...">
         </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/200/111/fff?text=Tyre+Guard" alt="Product">
-            <h3>Shark Tyre Guard</h3>
-            <p>Universal Tyre Guard</p>
-            <div class="price">399 TK</div>
+        
+        <div class="product-count">16 products</div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3><i class="fas fa-check" style="color: #25d366;"></i> Premium Quality</h3>
+                <p>Selected accessories</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-bangladeshi-taka-sign" style="color: #e50914;"></i> Budget Friendly</h3>
+                <p>Fair prices in BD</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fas fa-bolt" style="color: #f39c12;"></i> Fast Response</h3>
+                <p>Order via WhatsApp</p>
+            </div>
         </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="products-section" id="products">
+        <div class="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div>
+                    <img src="https://via.placeholder.com/300x200/111/fff?text=RTR+Engine+Guard" alt="Rtr Engine Guard" class="product-img">
+                    <div class="product-title">Rtr Engine Guard</div>
+                    <div class="product-desc">Premium Protection & Sporty Style for Your Bike.</div>
+                </div>
+                <div class="product-footer">
+                    <div class="price-box">
+                        <span class="current-price">699 TK</span>
+                        <span class="old-price">1100 TK</span>
+                    </div>
+                    <a href="https://wa.me/8801918455755" target="_blank" class="order-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div>
+                    <img src="https://via.placeholder.com/300x200/111/fff?text=Shark+Tyre+Guard" alt="Shark Tyre Guard" class="product-img">
+                    <div class="product-title">Shark Tyre Guard</div>
+                    <div class="product-desc">Smart Tyre Protection from Rain, Dust & Mud.</div>
+                </div>
+                <div class="product-footer">
+                    <div class="price-box">
+                        <span class="current-price">399 TK</span>
+                        <span class="old-price">700 TK</span>
+                    </div>
+                    <a href="https://wa.me/8801918455755" target="_blank" class="order-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div>
+                    <img src="https://via.placeholder.com/300x200/111/fff?text=Engine+Flasher" alt="Auto Engine Flasher" class="product-img">
+                    <div class="product-title">Auto Engine Flasher</div>
+                    <div class="product-desc">Smart & Auto Engine Flasher Light for Safety.</div>
+                </div>
+                <div class="product-footer">
+                    <div class="price-box">
+                        <span class="current-price">99 TK</span>
+                        <span class="old-price">150 TK</span>
+                    </div>
+                    <a href="https://wa.me/8801918455755" target="_blank" class="order-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div>
+                    <img src="https://via.placeholder.com/300x200/111/fff?text=Fog+Light" alt="Fog Light" class="product-img">
+                    <div class="product-title">Fog light</div>
+                    <div class="product-desc">Powerful Multi-Mode Lighting for a Safer Ride.</div>
+                </div>
+                <div class="product-footer">
+                    <div class="price-box">
+                        <span class="current-price">299 TK</span>
+                        <span class="old-price">350 TK</span>
+                    </div>
+                    <a href="https://wa.me/8801918455755" target="_blank" class="order-btn"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Floating Social Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://facebook.com/ProfessorMotorsPabna" class="float-btn fb-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@professor_motors_update?_r=1&_t=ZS-98r5BOTVFBI" class="float-btn tiktok-btn" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/8801918455755" class="float-btn wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
+
+    <!-- Footer Area -->
+    <footer>
+        <img src="https://i.ibb.co/3s6K82B/logo.jpg" alt="Professor Motors Pabna" class="footer-logo-img">
+
+        <div class="footer-contact">
+            <a href="mailto:professormotorspabna@gmail.com">
+                <i class="far fa-envelope" style="color: #e50914;"></i> professormotorspabna@gmail.com
+            </a>
+            <a href="https://wa.me/8801918455755" target="_blank">
+                <i class="fab fa-whatsapp" style="color: #25d366;"></i> 01918455755
+            </a>
+            <a href="https://facebook.com/ProfessorMotorsPabna" target="_blank">
+                <i class="fab fa-facebook-f" style="color: #1877f2;"></i> Professor Motors Pabna
+            </a>
+            <a href="https://www.tiktok.com/@professor_motors_update?_r=1&_t=ZS-98r5BOTVFBI" target="_blank">
+                <i class="fab fa-tiktok" style="color: #fff;"></i> TikTok Profile
+            </a>
+        </div>
+
+        <div class="copyright">
+            © 2026 Professor Motors. All rights reserved.
+        </div>
+    </footer>
+
 </body>
 </html>
