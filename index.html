@@ -223,13 +223,11 @@
             background: #ff0055;
             margin: 6px auto 0;
             border-radius: 2px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
+       .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* মোবাইলে পাশাপাশি ২টি দেখাবে */
+    gap: 10px; /* কার্ডের মাঝের ফাঁকা জায়গা সামান্য কমাবে যাতে সুন্দর বসে */
+}
 
         .product-card {
             background: linear-gradient(145deg, #15171e, #0f1014);
