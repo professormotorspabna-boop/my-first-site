@@ -829,6 +829,22 @@
             let text = `হ্যালো প্রফেসর মটরস,%0Aআমি একটি প্রোডাক্ট অর্ডার করতে চাই।%0A%0A📦 **প্রোডাক্ট:** ${curTitle}%0A🎨 **কালার:** ${selectedColor}%0A💰 **দাম:** ${curPrice}`;
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
         }
+        function searchProducts() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('product-card');
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByClassName('product-name')[0];
+        if (title) {
+            let textValue = title.textContent || title.innerText;
+            if (textValue.toLowerCase().indexOf(input) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+}
     </script>
 
 </body>
