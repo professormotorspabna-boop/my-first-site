@@ -15,7 +15,7 @@
         }
 
         body {
-            background-color: #050505;
+            background-color: #08080c;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -32,39 +32,53 @@
             padding: 20px 15px;
         }
 
-        /* 1. Top Header & Logo */
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(90deg, #ff0055, #ffaa00, #00e5ff);
+            color: #000000;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* 1. Header & Logo */
         .top-header {
             text-align: center;
-            padding: 20px 0 10px;
+            padding: 25px 0 10px;
         }
 
         .main-logo {
-            width: 85px;
-            height: 85px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            border: 3px solid #ff0055;
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
             margin-bottom: 12px;
         }
 
-        /* 2 & 3. Welcome & Subtitle */
+        /* 2 & 3. Colorful Welcome & Subtitle */
         .welcome-title {
-            font-size: 26px;
-            font-weight: 800;
-            color: #ffffff;
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff0055, #ffaa00, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .welcome-subtitle {
-            font-size: 13px;
-            color: #aaaaaa;
-            font-weight: 400;
+            font-size: 14px;
+            color: #00e5ff;
+            font-weight: 600;
             max-width: 600px;
             margin: 0 auto 25px;
             line-height: 1.5;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
         }
 
         /* 4. Search Bar */
@@ -79,32 +93,37 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #888888;
-            font-size: 15px;
+            color: #ffaa00;
+            font-size: 16px;
         }
 
         .search-input {
             width: 100%;
             padding: 12px 15px 12px 42px;
-            background: #111111;
-            border: 1px solid #333333;
+            background: #12131a;
+            border: 2px solid #ff0055;
             border-radius: 30px;
             color: #ffffff;
             font-size: 14px;
             outline: none;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: #8888aa;
         }
 
         .search-input:focus {
-            border-color: #ffffff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            border-color: #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
         }
 
-        /* 6 & 7. Info Cards (How to order & Delivery guarantee) */
+        /* 6 & 7. Info Cards with Colorful Accents */
         .info-cards {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 30px;
+            gap: 15px;
+            margin-bottom: 35px;
         }
 
         @media(min-width: 600px) {
@@ -114,19 +133,41 @@
         }
 
         .info-card {
-            background: #111111;
-            border: 1px solid #222222;
-            border-radius: 12px;
+            background: #12131c;
+            border: 1px solid #282a38;
+            border-radius: 14px;
             padding: 16px;
             display: flex;
             align-items: center;
             gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        .info-card i {
+        .info-card.order-card {
+            border-left: 4px solid #25d366;
+        }
+
+        .info-card.trust-card {
+            border-left: 4px solid #ffaa00;
+        }
+
+        .info-card i.wa-icon {
             font-size: 24px;
-            color: #ffffff;
-            background: #222222;
+            color: #25d366;
+            background: rgba(37, 211, 102, 0.15);
+            padding: 12px;
+            border-radius: 50%;
+            min-width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-card i.truck-icon {
+            font-size: 22px;
+            color: #ffaa00;
+            background: rgba(255, 170, 0, 0.15);
             padding: 12px;
             border-radius: 50%;
             min-width: 48px;
@@ -137,27 +178,36 @@
         }
 
         .info-card-text h4 {
-            font-size: 14px;
+            font-size: 15px;
             color: #ffffff;
             margin-bottom: 4px;
-            font-weight: 700;
+            font-weight: 800;
+        }
+
+        .info-card.order-card h4 {
+            color: #25d366;
+        }
+
+        .info-card.trust-card h4 {
+            color: #ffaa00;
         }
 
         .info-card-text p {
-            font-size: 11px;
-            color: #888888;
+            font-size: 12px;
+            color: #dddddd;
             line-height: 1.4;
         }
 
         /* Section Title */
         .section-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff0055, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-left: 3px solid #ffffff;
+            border-left: 4px solid #ff0055;
             padding-left: 10px;
         }
 
@@ -165,7 +215,7 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 14px;
             margin-bottom: 40px;
         }
 
@@ -177,46 +227,48 @@
         }
 
         .product-card {
-            background: #111111;
-            border: 1px solid #222222;
-            border-radius: 12px;
+            background: linear-gradient(145deg, #151722, #0d0e15);
+            border: 1px solid #262938;
+            border-radius: 14px;
             padding: 10px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
         }
 
         .product-card:hover {
-            border-color: #ffffff;
-            transform: translateY(-3px);
+            border-color: #ff0055;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 0, 85, 0.25);
         }
 
         .product-img {
             width: 100%;
-            height: 130px;
+            height: 135px;
             object-fit: cover;
-            border-radius: 8px;
-            background: #1a1a1a;
-            margin-bottom: 8px;
+            border-radius: 10px;
+            background: #1c1e2a;
+            margin-bottom: 10px;
         }
 
         @media(min-width: 768px) {
             .product-img {
-                height: 160px;
+                height: 165px;
             }
         }
 
         .product-name {
-            font-size: 13px;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 14px;
+            font-weight: 800;
+            color: #00e5ff;
             margin-bottom: 4px;
         }
 
         .product-desc {
-            font-size: 10px;
-            color: #777777;
-            margin-bottom: 10px;
+            font-size: 11px;
+            color: #bbbbcc;
+            margin-bottom: 12px;
             line-height: 1.3;
         }
 
@@ -224,111 +276,124 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #222222;
+            border-top: 1px solid #222535;
             padding-top: 8px;
         }
 
         .price-tag {
-            font-size: 13px;
-            font-weight: 800;
-            color: #ffffff;
+            font-size: 15px;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
         }
 
         .order-btn {
-            background: #ffffff;
-            color: #000000;
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-size: 10px;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: #ffffff;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 11px;
             font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
         }
 
         .order-btn:hover {
-            background: #cccccc;
+            transform: scale(1.05);
         }
 
-        /* Floating Social Buttons (Facebook, WhatsApp, TikTok) */
+        /* Floating Social Buttons */
         .floating-socials {
             position: fixed;
             right: 15px;
             bottom: 25px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             z-index: 999;
         }
 
         .social-btn {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: #111111;
-            border: 1px solid #333333;
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
+        .social-btn.fb { background: #1877f2; }
+        .social-btn.wa { background: #25d366; }
+        .social-btn.tiktok { background: #000000; border: 1px solid #ff0055; }
+
         .social-btn:hover {
-            background: #ffffff;
-            color: #000000;
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         /* Footer Section */
         footer {
-            background: #000000;
-            border-top: 1px solid #222222;
-            padding: 30px 15px 20px;
+            background: #050508;
+            border-top: 1px solid #222535;
+            padding: 35px 15px 25px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .footer-logo {
-            width: 65px;
-            height: 65px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid #ffffff;
-            margin-bottom: 12px;
+            border: 2px solid #ffaa00;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.4);
         }
 
         .footer-info {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .footer-info-item {
-            color: #aaaaaa;
-            font-size: 12px;
+            color: #ffaa00;
+            font-size: 13px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
+        .footer-info-item a {
+            color: #00e5ff;
+        }
+
         .footer-address {
-            color: #888888;
-            font-size: 12px;
-            max-width: 400px;
-            line-height: 1.5;
+            color: #ffffff;
+            font-size: 13px;
+            max-width: 450px;
+            line-height: 1.6;
             margin-top: 5px;
-            padding: 8px 12px;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            border-radius: 8px;
+            padding: 10px 15px;
+            background: #10121a;
+            border: 1px solid #ff0055;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
+        }
+
+        .footer-address i {
+            color: #ff0055;
         }
 
         .copyright {
-            color: #444444;
+            color: #777788;
             font-size: 11px;
             margin-top: 15px;
         }
@@ -336,12 +401,15 @@
 </head>
 <body>
 
+    <div class="announcement-bar">
+        🔥 প্রফেশনাল বাইক পার্টস ও মডিফিকেশন আইটেম - ক্যাশ অন ডেলিভারি!
+    </div>
+
     <div class="wrapper">
 
         <!-- 1, 2, 3. Header, Logo & Welcome Section -->
         <header class="top-header">
-            <!-- লোগোর ডাইরেক্ট লিংক বসানোর স্থান -->
-            <img src="https://ibb.co.com/xSCz1JP4" alt="Professor Motors Logo" class="main-logo">
+            <img src="https://i.ibb.co.com/d4Lsk4h4/IMG-20260228-WA0001.jpg" alt="Professor Motors Logo" class="main-logo">
             <h1 class="welcome-title">Welcome to প্রফেসর মটরস</h1>
             <p class="welcome-subtitle">stylish, trendy, ও প্রিমিয়াম জিনিস একমাত্র আমাদের কাছেই পাবেন</p>
         </header>
@@ -354,15 +422,15 @@
 
         <!-- 6 & 7. Order Process & Delivery Trust Cards -->
         <div class="info-cards">
-            <div class="info-card">
-                <i class="fab fa-whatsapp"></i>
+            <div class="info-card order-card">
+                <i class="fab fa-whatsapp wa-icon"></i>
                 <div class="info-card-text">
                     <h4>কিভাবে অর্ডার করবেন?</h4>
                     <p>প্রোডাক্ট সিলেক্ট করুন এবং একদম সহজে এক ক্লিকে হোয়াটসঅ্যাপে ক্লিক করে অর্ডার কনফার্ম করুন।</p>
                 </div>
             </div>
-            <div class="info-card">
-                <i class="fas fa-truck-fast"></i>
+            <div class="info-card trust-card">
+                <i class="fas fa-truck-fast truck-icon"></i>
                 <div class="info-card-text">
                     <h4>নিরাপদ ডেলিভারি সুবিধা</h4>
                     <p>শুধু Delivery Charge দিয়ে প্রোডাক্ট হাতে পেয়ে চেক করে টাকা পরিশোধের ১০০% নিশ্চয়তা!</p>
@@ -438,11 +506,11 @@
 
     </div>
 
-    <!-- Floating Social Buttons (Facebook, WhatsApp, TikTok) -->
+    <!-- Floating Social Buttons -->
     <div class="floating-socials">
-        <a href="https://facebook.com" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/8801918455755" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://tiktok.com" class="social-btn" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://facebook.com" class="social-btn fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/8801918455755" class="social-btn wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://tiktok.com" class="social-btn tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
 
     <!-- Footer -->
@@ -451,7 +519,7 @@
         
         <div class="footer-info">
             <div class="footer-info-item">
-                <i class="fas fa-envelope"></i> professormotorspabna@gmail.com
+                <i class="fas fa-envelope"></i> <a href="mailto:professormotorspabna@gmail.com">professormotorspabna@gmail.com</a>
             </div>
             <div class="footer-info-item footer-address">
                 <i class="fas fa-location-dot"></i> পাবনা টাউন গার্লস স্কুল দোকান নং ১ আব্দুল হামিদ রোড দিলালাপুর পাবনা
