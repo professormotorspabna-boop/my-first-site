@@ -5,29 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professor Motors - প্রিমিয়াম বাইক পার্টস ও অ্যাক্সেসরিজ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 
-           General Reset & Animations
-           সব এলিমেন্টে স্মুথ ট্রানজিশন যুক্ত করা হয়েছে
-        */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: all 0.3s ease-in-out; /* সব পরিবর্তনের জন্য স্মুথ ট্রানজিশন */
+            transition: all 0.3s ease-in-out;
         }
 
         html {
-            scroll-behavior: smooth; /* সেকশনে যাওয়ার সময় ধীরে যাবে */
+            scroll-behavior: smooth;
         }
 
         body {
             background: #0d0e12;
             color: #ffffff;
             overflow-x: hidden;
-            animation: fadeInBody 1s ease-in; /* পুরো পেইড লোড হওয়ার সময় ফেইড-ইন */
+            animation: fadeInBody 0.8s ease-in;
         }
 
         @keyframes fadeInBody {
@@ -43,12 +38,11 @@
             padding: 6px 10px;
             font-size: 12px;
             font-weight: bold;
-            letter-spacing: 0.5px;
             position: relative;
             z-index: 101;
         }
 
-        /* Navbar with Header Animation */
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -60,7 +54,7 @@
             z-index: 100;
             border-bottom: 1px solid #222;
             backdrop-filter: blur(8px);
-            animation: slideDown 0.8s ease-out; /* ওপর থেকে নিচে আসার অ্যানিমেশন */
+            animation: slideDown 0.6s ease-out;
         }
 
         @keyframes slideDown {
@@ -75,15 +69,8 @@
             text-decoration: none;
         }
 
-        .nav-logo-img {
-            height: 30px;
-            width: auto;
-            border-radius: 4px;
-            object-fit: contain;
-        }
-
         .logo-text {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 800;
             background: linear-gradient(45deg, #ff0055, #ffaa00);
             -webkit-background-clip: text;
@@ -91,42 +78,18 @@
             text-transform: uppercase;
         }
 
-        .menu-icon {
-            font-size: 18px;
-            cursor: pointer;
-            color: #fff;
-        }
-
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 30px 15px 20px;
             background: radial-gradient(circle at center, rgba(229, 9, 20, 0.15) 0%, rgba(13, 14, 18, 0) 70%);
-            animation: fadeInHero 1.2s ease-out; /* হিরো সেকশন ধীরে লোড হবে */
-        }
-
-        @keyframes fadeInHero {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .tagline-badge {
-            display: inline-block;
-            border: 1px solid #ff0055;
-            background: rgba(255, 0, 85, 0.1);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #ff99bb;
-            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
             margin-bottom: 8px;
             color: #ffffff;
-            line-height: 1.3;
         }
 
         .hero h1 span {
@@ -136,73 +99,12 @@
         .hero p {
             color: #aaa;
             font-size: 12px;
-            letter-spacing: 1.5px;
             margin-bottom: 20px;
         }
 
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(45deg, #e50914, #ff5500);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
-            transform: scale(1);
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05); /* মাউস রাখলে বড় হবে */
-            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 15px 5%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: linear-gradient(145deg, #16181f, #111216);
-            border: 1px solid #22242b;
-            padding: 12px 8px;
-            border-radius: 10px;
-            text-align: center;
-            animation: fadeInCard 0.8s ease-out both; /* ফিচার কার্ড লোড হওয়ার অ্যানিমেশন */
-        }
-
-        @keyframes fadeInCard {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* প্রত্যেকটি ফিচার কার্ডকে আলাদা সময়ে লোড করার জন্য */
-        .feature-card:nth-child(1) { animation-delay: 0.2s; }
-        .feature-card:nth-child(2) { animation-delay: 0.4s; }
-        .feature-card:nth-child(3) { animation-delay: 0.6s; }
-
-        .feature-card i {
-            font-size: 20px;
-            margin-bottom: 6px;
-            color: #ffaa00;
-        }
-
-        .feature-card h3 {
-            font-size: 12px;
-            color: #fff;
-        }
-
-        /* Products Grid with Entrance Animation */
+        /* Products Grid Setup */
         .products-section {
-            padding: 20px 5% 40px;
+            padding: 20px 3% 40px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -223,66 +125,80 @@
             background: #ff0055;
             margin: 6px auto 0;
             border-radius: 2px;
-       .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* মোবাইলে পাশাপাশি ২টি দেখাবে */
-    gap: 10px; /* কার্ডের মাঝের ফাঁকা জায়গা সামান্য কমাবে যাতে সুন্দর বসে */
-}
+        }
+
+        /* Responsive Grid: Mobile-এ ২টি এবং Desktop-এ ৩/৪টি */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+            }
+        }
 
         .product-card {
             background: linear-gradient(145deg, #15171e, #0f1014);
             border: 1px solid #252830;
-            border-radius: 14px;
-            padding: 12px;
+            border-radius: 12px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            animation: fadeInCard 1s ease-out both; /* প্রোডাক্ট কার্ড ধীরে ধীরে ভেসে উঠবে */
         }
 
-        /* প্রোডাক্ট কার্ডে মাউস রাখলে কালার পরিবর্তন ও হালকা ওপরে উঠবে */
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: #ff0055;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
         }
 
         .discount-badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 8px;
+            left: 8px;
             background: #ff0055;
             color: white;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 6px;
+            padding: 2px 6px;
+            border-radius: 4px;
             z-index: 2;
         }
 
         .product-img {
             width: 100%;
-            height: 160px;
+            height: 130px;
             object-fit: cover;
             border-radius: 8px;
             background-color: #1c1e24;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .product-img {
+                height: 180px;
+            }
         }
 
         .product-title {
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             color: #fff;
         }
 
         .product-desc {
             color: #888d9a;
-            font-size: 11px;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            font-size: 10px;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
         .product-footer {
@@ -290,17 +206,16 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid #22242b;
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         .price-box {
             display: flex;
-            align-items: baseline;
-            gap: 6px;
+            flex-direction: column;
         }
 
         .current-price {
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 800;
             color: #00ff88;
         }
@@ -308,116 +223,30 @@
         .old-price {
             color: #666;
             text-decoration: line-through;
-            font-size: 11px;
+            font-size: 10px;
         }
 
-        /* Pulsing Order Button */
         .order-btn {
             background: linear-gradient(45deg, #25d366, #128c7e);
             color: #fff;
-            padding: 6px 12px;
-            border-radius: 15px;
+            padding: 6px 10px;
+            border-radius: 12px;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
             display: flex;
             align-items: center;
             gap: 4px;
-            animation: pulse 2s infinite; /* বাটনটি হালকাভাবে কাঁপবে */
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .order-btn:hover {
-            animation: none; /* মাউস রাখলে কাঁপবে না */
-            background: linear-gradient(45deg, #128c7e, #25d366);
-            transform: scale(1.05);
-        }
-
-        /* Order Process Section */
-        .process-section {
-            background: #12141a;
-            padding: 25px 5%;
-            margin: 30px 0;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            text-align: center;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .process-step {
-            padding: 10px;
-            animation: fadeInCard 1s ease-out both; /* লোড অ্যানিমেশন */
-        }
-
-        .process-step i {
-            font-size: 24px;
-            color: #ff0055;
-            margin-bottom: 8px;
-        }
-
-        .process-step h4 {
-            font-size: 13px;
-            margin-bottom: 4px;
-        }
-
-        .process-step p {
-            font-size: 10px;
-            color: #777;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px 20px;
-            background: #08090b;
-            border-top: 1px solid #1c1e24;
-        }
-
-        .footer-logo-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ff0055;
-            margin: 0 auto 15px;
-            display: block;
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
-        }
-
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .footer-contact a {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .copyright {
-            color: #555;
-            font-size: 11px;
-        }
-
-        /* Floating Social Buttons with Hover Animation */
+        /* Floating Buttons */
         .floating-buttons {
             position: fixed;
             bottom: 20px;
@@ -429,92 +258,57 @@
         }
 
         .float-btn {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            transform: scale(1);
-        }
-
-        .float-btn:hover {
-            transform: scale(1.1) translateY(-5px); /* মাউস রাখলে সুন্দরভাবে বড় ও ওপরে উঠবে */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .fb-btn { background-color: #1877f2; }
         .wa-btn { background-color: #25d366; }
         .tiktok-btn { background-color: #000000; border: 1px solid #333; }
-
     </style>
 </head>
 <body>
 
-    <!-- Top Announcement Bar -->
     <div class="announcement-bar">
-        🔥 সারা দেশে দ্রুত ক্যাশ অন ডেলিভারি সার্ভিস! অর্ডার করতে হোয়াটসঅ্যাপ করুন।
+        🔥 প্রফেশনাল বাইক পার্টস ও মডিফিকেশন আইটেম - ক্যাশ অন ডেলিভারি!
     </div>
 
-    <!-- Header Navbar -->
-    <nav class="navbar">
+    <div class="navbar">
         <a href="#" class="logo-box">
-            <!-- লোগো সাইজ ছোট করা হয়েছে -->
-            <img src="https://i.ibb.co.com/xSCz1JP4/logo.jpg" alt="Professor Motors Logo" class="nav-logo-img">
-            <span class="logo-text">Professor Motors</span>
+            <span class="logo-text">PROFESSOR MOTORS</span>
         </a>
-        <div class="menu-icon"><i class="fas fa-bars"></i></div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="tagline-badge">
-            <i class="fas fa-motorcycle"></i> প্রিমিয়াম ও ট্রেন্ডি বাইক পার্টস
-        </div>
-        <h1>স্বাগতম <span>Professor Motors</span> এ</h1>
-        <p>সেরা মানের বাইক অ্যাক্সেসরিজ ও মডিফিকেশন আইটেম</p>
-        <a href="#products" class="btn-primary">প্রোডাক্টসমূহ দেখুন <i class="fas fa-chevron-down"></i></a>
-    </section>
+    <div class="hero">
+        <h1>আপনার বাইকের জন্য <span>সেরা পার্টস</span></h1>
+        <p>গুণমান ও নিরাপত্তার সেরা নিশ্চয়তা</p>
+    </div>
 
-    <!-- Key Features -->
-    <section class="features-grid">
-        <div class="feature-card">
-            <i class="fas fa-shield-halved"></i>
-            <h3>সেরা কোয়ালিটি</h3>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-tags"></i>
-            <h3>সাশ্রয়ী মূল্য</h3>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-truck-fast"></i>
-            <h3>দ্রুত ডেলিভারি</h3>
-        </div>
-    </section>
-
-    <!-- Product Section -->
     <section class="products-section" id="products">
-        <h2 class="section-title">আমাদের প্রোডাক্টস</h2>
+        <h2 class="section-title">আমাদের প্রডাক্টসমূহ</h2>
         
         <div class="product-grid">
-            
+
             <!-- Product 1 -->
             <div class="product-card">
                 <span class="discount-badge">অফার</span>
                 <div>
-                    <!-- প্রোডাক্ট ১ এর ছবির লিঙ্ক নিচের src="..." এ বসাবেন -->
-                    <img src="https://via.placeholder.com/300x200/15171e/00ff88?text=RTR+Engine+Guard" alt="আরটিআর ইঞ্জিন গার্ড" class="product-img">
+                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="RTR Engine Guard" class="product-img">
                     <div class="product-title">আরটিআর ইঞ্জিন গার্ড</div>
-                    <div class="product-desc">আপনার বাইকের ইঞ্জিনের সুরক্ষায় এবং আকর্ষণীয় লুক দিতে প্রিমিয়াম গার্ড।</div>
+                    <div class="product-desc">আপনার বাইকের ইঞ্জিনের সুরক্ষায় এবং আকর্ষণীয় লুক দিতে প্রিমিয়াম গার্ড।</div>
                 </div>
                 <div class="product-footer">
                     <div class="price-box">
                         <span class="current-price">৬৯৯ ৳</span>
-                        <span class="old-price">১১০০ ৳</span>
+                        <span class="old-price">৯৯৯ ৳</span>
                     </div>
                     <a href="https://wa.me/8801918455755?text=আমি%20RTR%20Engine%20Guard%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
                         অর্ডার <i class="fab fa-whatsapp"></i>
@@ -526,10 +320,9 @@
             <div class="product-card">
                 <span class="discount-badge">অফার</span>
                 <div>
-                    <!-- প্রোডাক্ট ২ এর ছবির লিঙ্ক নিচের src="..." এ বসাবেন -->
-                    <img src="https://via.placeholder.com/300x200/15171e/00ff88?text=Shark+Tyre+Guard" alt="শার্ক টায়ার গার্ড" class="product-img">
-                    <div class="product-title">শার্ক টায়ার গার্ড</div>
-                    <div class="product-desc">বৃষ্টি ও কাদা থেকে বাইক ও নিজেকে পরিষ্কার রাখতে সেরা টায়ার গার্ড।</div>
+                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Tyre Guard" class="product-img">
+                    <div class="product-title">শার্ক টায়ার গার্ড</div>
+                    <div class="product-desc">বৃষ্টি ও কাদা থেকে বাইক ও নিজেকে পরিষ্কার রাখতে সেরা টায়ার গার্ড।</div>
                 </div>
                 <div class="product-footer">
                     <div class="price-box">
@@ -544,9 +337,9 @@
 
             <!-- Product 3 -->
             <div class="product-card">
+                <span class="discount-badge">অফার</span>
                 <div>
-                    <!-- প্রোডাক্ট ৩ এর ছবির লিঙ্ক নিচের src="..." এ বসাবেন -->
-                    <img src="https://via.placeholder.com/300x200/15171e/00ff88?text=Auto+Engine+Flasher" alt="অটো ইঞ্জিন ফ্লাশার" class="product-img">
+                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Engine Flasher" class="product-img">
                     <div class="product-title">অটো ইঞ্জিন ফ্লাশার</div>
                     <div class="product-desc">বাইকের সুরক্ষার জন্য অটোমেটিক ও স্মার্ট ইঞ্জিন ফ্লাশার লাইট সিস্টেম।</div>
                 </div>
@@ -561,96 +354,32 @@
                 </div>
             </div>
 
-            <!-- Product 4 -->
+            <!-- Product 4: VEGA BOLT -->
             <div class="product-card">
+                <span class="discount-badge">অফার</span>
                 <div>
-                    <!-- প্রোডাক্ট ৪ এর ছবির লিঙ্ক নিচের src="..." এ বসাবেন -->
-                    <img src="https://via.placeholder.com/300x200/15171e/00ff88?text=Fog+Light" alt="হাই পাওয়ার ফগ লাইট" class="product-img">
-                    <div class="product-title">হাই পাওয়ার ফগ লাইট</div>
-                    <div class="product-desc">কুয়াশা ও রাতে দূরপাল্লার রাইডিংয়ের জন্য হাই-পাওয়ার মাল্টি-মোড লাইট।</div>
+                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="VEGA BOLT" class="product-img">
+                    <div class="product-title">VEGA BOLT</div>
+                    <div class="product-desc">Vega Helmet – সর্বোচ্চ সুরক্ষা, আধুনিক স্টাইল এবং আরামদায়ক রাইডিংয়ের পারফেক্ট কম্বো!</div>
                 </div>
                 <div class="product-footer">
                     <div class="price-box">
-                        <span class="current-price">২৯৯ ৳</span>
-                        <span class="old-price">৩৫০ ৳</span>
+                        <span class="current-price">২৩০০ ৳</span>
+                        <span class="old-price">২৯৫০ ৳</span>
                     </div>
-                    <a href="https://wa.me/8801918455755?text=আমি%20Fog%20Light%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
+                    <a href="https://wa.me/8801918455755?text=আমি%20VEGA%20BOLT%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
                         অর্ডার <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- নতুন প্রোডাক্ট যোগ করতে চাইলে উপরের প্রোডাক্ট কোডটি কপি করে নিচে পেস্ট করুন -->
-<div class="product-card">
-    <span class="discount-badge">অফার</span>
-    <div>
-        <!-- ছবির আসল ডাইরেক্ট লিঙ্কটি src="..." এর ভেতরে বসানো হয়েছে -->
-<img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="VEGA BOLT" class="product-img"> 
-        <div class="product-title">VEGA BOLT</div>
-        <div class="product-desc">Vega Helmet – সর্বোচ্চ সুরক্ষা, আধুনিক স্টাইল এবং আরামদায়ক রাইডিংয়ের পারফেক্ট কম্বো!</div>
-    </div>
-    <div class="product-footer">
-        <div class="price-box">
-            <span class="current-price">২৩০০ ৳</span>
-            <span class="old-price">২৯৫০ ৳</span>
-        </div>
-        <a href="https://wa.me/8801918455755?text=আমি%20VEGA%20BOLT%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
-            অর্ডার <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-</div>
-        </div>
-    </section>
-
-    <!-- Order Process Section -->
-    <section class="process-section">
-        <h2 class="section-title">অর্ডার করার নিয়ম</h2>
-        <div class="process-grid">
-            <div class="process-step">
-                <i class="fas fa-hand-pointer"></i>
-                <h4>১. প্রোডাক্ট পছন্দ করুন</h4>
-                <p>আপনার পছন্দের প্রোডাক্ট নির্বাচন করুন</p>
-            </div>
-            <div class="process-step">
-                <i class="fab fa-whatsapp"></i>
-                <h4>২. অর্ডার বাটনে চাপুন</h4>
-                <p>সরাসরি হোয়াটসঅ্যাপে কথা বলুন</p>
-            </div>
-            <div class="process-step">
-                <i class="fas fa-box-open"></i>
-                <h4>৩. হোম ডেলিভারি</h4>
-                <p>পণ্য হাতে পেয়ে টাকা পরিশোধ করুন</p>
-            </div>
         </div>
     </section>
 
     <!-- Floating Social Buttons -->
     <div class="floating-buttons">
-        <a href="https://facebook.com/ProfessorMotorsPabna" class="float-btn fb-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.tiktok.com/@professor_motors_update?_r=1&_t=ZS-98r5BOTVFBI" class="float-btn tiktok-btn" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://wa.me/8801918455755" class="float-btn wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-
-    <!-- Footer Area -->
-    <footer>
-        <img src="https://i.ibb.co.com/xSCz1JP4/logo.jpg" alt="Professor Motors Pabna" class="footer-logo-img">
-
-        <div class="footer-contact">
-            <a href="mailto:professormotorspabna@gmail.com">
-                <i class="far fa-envelope" style="color: #ff0055;"></i> professormotorspabna@gmail.com
-            </a>
-            <a href="https://wa.me/8801918455755" target="_blank">
-                <i class="fab fa-whatsapp" style="color: #25d366;"></i> 01918455755
-            </a>
-            <a href="https://facebook.com/ProfessorMotorsPabna" target="_blank">
-                <i class="fab fa-facebook-f" style="color: #1877f2;"></i> Professor Motors Pabna
-            </a>
-        </div>
-
-        <div class="copyright">
-            © 2026 Professor Motors. All rights reserved.
-        </div>
-    </footer>
 
 </body>
 </html>
