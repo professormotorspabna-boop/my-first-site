@@ -11,92 +11,67 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: all 0.3s ease-in-out;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            transition: all 0.3s ease;
         }
 
         body {
-            background: #0d0e12;
+            background-color: #050505;
             color: #ffffff;
             overflow-x: hidden;
-            animation: fadeInBody 0.8s ease-in;
         }
 
-        @keyframes fadeInBody {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Top Announcement Bar */
-        .announcement-bar {
-            background: linear-gradient(90deg, #ff0055, #e50914, #ff5500);
-            color: white;
-            text-align: center;
-            padding: 6px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            position: relative;
-            z-index: 101;
-        }
-
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 5%;
-            background: rgba(13, 14, 18, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #222;
-            backdrop-filter: blur(8px);
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        a {
             text-decoration: none;
+            color: inherit;
         }
 
-        .nav-logo-img {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ff0055;
-        }
-
-        .logo-text {
-            font-size: 16px;
-            font-weight: 800;
-            background: linear-gradient(45deg, #ff0055, #ffaa00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-        }
-
-        /* Search & Info Container */
-        .main-container {
-            padding: 15px 5%;
+        /* Container Layout */
+        .wrapper {
             max-width: 1000px;
             margin: 0 auto;
+            padding: 20px 15px;
         }
 
-        /* Search Box Style */
+        /* 1. Top Header & Logo */
+        .top-header {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+
+        .main-logo {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            margin-bottom: 12px;
+        }
+
+        /* 2 & 3. Welcome & Subtitle */
+        .welcome-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .welcome-subtitle {
+            font-size: 13px;
+            color: #aaaaaa;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            line-height: 1.5;
+        }
+
+        /* 4. Search Bar */
         .search-box {
             position: relative;
-            margin-bottom: 15px;
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
 
         .search-box i {
@@ -104,123 +79,116 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #888;
-            font-size: 14px;
+            color: #888888;
+            font-size: 15px;
         }
 
         .search-input {
             width: 100%;
             padding: 12px 15px 12px 42px;
-            background: #14161d;
-            border: 1px solid #282b36;
-            border-radius: 12px;
-            color: #fff;
-            font-size: 13px;
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 14px;
             outline: none;
         }
 
         .search-input:focus {
-            border-color: #ff0055;
-            box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
+            border-color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
-        /* Product Count Header */
-        .product-count {
-            font-size: 14px;
-            color: #bbb;
-            margin-bottom: 15px;
-            font-weight: 600;
+        /* 6 & 7. Info Cards (How to order & Delivery guarantee) */
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
         }
 
-        .product-count span {
-            color: #fff;
-            font-weight: 800;
+        @media(min-width: 600px) {
+            .info-cards {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
-        /* Features Cards (3 Items Stack) */
-        .features-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .feature-item {
-            background: #12141a;
-            border: 1px solid #222530;
+        .info-card {
+            background: #111111;
+            border: 1px solid #222222;
             border-radius: 12px;
-            padding: 14px 16px;
-        }
-
-        .feature-item h3 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #fff;
+            padding: 16px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
+        }
+
+        .info-card i {
+            font-size: 24px;
+            color: #ffffff;
+            background: #222222;
+            padding: 12px;
+            border-radius: 50%;
+            min-width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-card-text h4 {
+            font-size: 14px;
+            color: #ffffff;
             margin-bottom: 4px;
+            font-weight: 700;
         }
 
-        .feature-item h3 i {
-            color: #ff0055;
-            font-size: 13px;
-        }
-
-        .feature-item p {
+        .info-card-text p {
             font-size: 11px;
-            color: #7a8092;
-            padding-left: 21px;
+            color: #888888;
+            line-height: 1.4;
         }
 
-        /* Products Grid Setup (Mobile 2 Columns) */
-        .product-grid {
+        /* Section Title */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #ffffff;
+            padding-left: 10px;
+        }
+
+        /* 5. Products Grid */
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
+            margin-bottom: 40px;
         }
 
-        @media (min-width: 768px) {
-            .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 20px;
-            }
-
-            .features-list {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+        @media(min-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 18px;
             }
         }
 
         .product-card {
-            background: linear-gradient(145deg, #15171e, #0f1014);
-            border: 1px solid #252830;
+            background: #111111;
+            border: 1px solid #222222;
             border-radius: 12px;
             padding: 10px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
-            overflow: hidden;
         }
 
         .product-card:hover {
-            transform: translateY(-4px);
-            border-color: #ff0055;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .discount-badge {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            background: #ff0055;
-            color: white;
-            font-size: 9px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 4px;
-            z-index: 2;
+            border-color: #ffffff;
+            transform: translateY(-3px);
         }
 
         .product-img {
@@ -228,96 +196,110 @@
             height: 130px;
             object-fit: cover;
             border-radius: 8px;
-            background-color: #1c1e24;
+            background: #1a1a1a;
             margin-bottom: 8px;
         }
 
-        @media (min-width: 768px) {
+        @media(min-width: 768px) {
             .product-img {
-                height: 180px;
+                height: 160px;
             }
         }
 
-        .product-title {
+        .product-name {
             font-size: 13px;
             font-weight: 700;
+            color: #ffffff;
             margin-bottom: 4px;
-            color: #fff;
         }
 
         .product-desc {
-            color: #888d9a;
             font-size: 10px;
+            color: #777777;
             margin-bottom: 10px;
             line-height: 1.3;
         }
 
-        .product-footer {
+        .product-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #22242b;
+            border-top: 1px solid #222222;
             padding-top: 8px;
         }
 
-        .price-box {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .current-price {
-            font-size: 14px;
+        .price-tag {
+            font-size: 13px;
             font-weight: 800;
-            color: #00ff88;
-        }
-
-        .old-price {
-            color: #666;
-            text-decoration: line-through;
-            font-size: 10px;
+            color: #ffffff;
         }
 
         .order-btn {
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            color: #fff;
+            background: #ffffff;
+            color: #000000;
             padding: 6px 10px;
-            border-radius: 12px;
-            text-decoration: none;
+            border-radius: 6px;
             font-size: 10px;
             font-weight: bold;
             display: flex;
             align-items: center;
             gap: 4px;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        .order-btn:hover {
+            background: #cccccc;
         }
 
-        /* Footer Style */
+        /* Floating Social Buttons (Facebook, WhatsApp, TikTok) */
+        .floating-socials {
+            position: fixed;
+            right: 15px;
+            bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #111111;
+            border: 1px solid #333333;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .social-btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: scale(1.1);
+        }
+
+        /* Footer Section */
         footer {
+            background: #000000;
+            border-top: 1px solid #222222;
+            padding: 30px 15px 20px;
             text-align: center;
-            padding: 30px 20px 20px;
-            background: #08090b;
-            border-top: 1px solid #1c1e24;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
-        .footer-logo-img {
-            width: 75px;
-            height: 75px;
+        .footer-logo {
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #ff0055;
-            margin: 0 auto 12px;
-            display: block;
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+            border: 1px solid #ffffff;
+            margin-bottom: 12px;
         }
 
-        .footer-contact {
+        .footer-info {
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -325,112 +307,82 @@
             margin-bottom: 15px;
         }
 
-        .footer-contact a {
-            color: #aaa;
-            text-decoration: none;
+        .footer-info-item {
+            color: #aaaaaa;
             font-size: 12px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+        }
+
+        .footer-address {
+            color: #888888;
+            font-size: 12px;
+            max-width: 400px;
+            line-height: 1.5;
+            margin-top: 5px;
+            padding: 8px 12px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
         }
 
         .copyright {
-            color: #555;
+            color: #444444;
             font-size: 11px;
+            margin-top: 15px;
         }
-
-        /* Floating Social Buttons (FB, TikTok, WA) */
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            transition: transform 0.2s;
-        }
-
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .fb-btn { background-color: #1877f2; }
-        .tiktok-btn { background-color: #000000; border: 1px solid #333; }
-        .wa-btn { background-color: #25d366; }
     </style>
 </head>
 <body>
 
-    <div class="announcement-bar">
-        🔥 প্রফেশনাল বাইক পার্টস ও মডিফিকেশন আইটেম - ক্যাশ অন ডেলিভারি!
-    </div>
+    <div class="wrapper">
 
-    <div class="navbar">
-        <a href="#" class="logo-box">
-            <img src="https://i.ibb.co.com/d4Lsk4h4/IMG-20260228-WA0001.jpg" alt="Professor Motors Logo" class="nav-logo-img">
-            <span class="logo-text">PROFESSOR MOTORS</span>
-        </a>
-    </div>
+        <!-- 1, 2, 3. Header, Logo & Welcome Section -->
+        <header class="top-header">
+            <!-- লোগোর ডাইরেক্ট লিংক বসানোর স্থান -->
+            <img src="https://ibb.co.com/xSCz1JP4" alt="Professor Motors Logo" class="main-logo">
+            <h1 class="welcome-title">Welcome to প্রফেসর মটরস</h1>
+            <p class="welcome-subtitle">stylish, trendy, ও প্রিমিয়াম জিনিস একমাত্র আমাদের কাছেই পাবেন</p>
+        </header>
 
-    <div class="main-container">
-
-        <!-- Search Bar -->
+        <!-- 4. Search Bike Accessories -->
         <div class="search-box">
             <i class="fas fa-search"></i>
             <input type="text" class="search-input" placeholder="Search bike accessories...">
         </div>
 
-        <!-- Product Count -->
-        <div class="product-count">
-            <span>4</span> products
-        </div>
-
-        <!-- 3 Feature Badges -->
-        <div class="features-list">
-            <div class="feature-item">
-                <h3><i class="fas fa-check"></i> Premium Quality</h3>
-                <p>Selected accessories</p>
+        <!-- 6 & 7. Order Process & Delivery Trust Cards -->
+        <div class="info-cards">
+            <div class="info-card">
+                <i class="fab fa-whatsapp"></i>
+                <div class="info-card-text">
+                    <h4>কিভাবে অর্ডার করবেন?</h4>
+                    <p>প্রোডাক্ট সিলেক্ট করুন এবং একদম সহজে এক ক্লিকে হোয়াটসঅ্যাপে ক্লিক করে অর্ডার কনফার্ম করুন।</p>
+                </div>
             </div>
-            <div class="feature-item">
-                <h3><i class="fas fa-bangladeshi-taka-sign"></i> Budget Friendly</h3>
-                <p>Fair prices in BD</p>
-            </div>
-            <div class="feature-item">
-                <h3><i class="fas fa-bolt"></i> Fast Response</h3>
-                <p>Order via WhatsApp</p>
+            <div class="info-card">
+                <i class="fas fa-truck-fast"></i>
+                <div class="info-card-text">
+                    <h4>নিরাপদ ডেলিভারি সুবিধা</h4>
+                    <p>শুধু Delivery Charge দিয়ে প্রোডাক্ট হাতে পেয়ে চেক করে টাকা পরিশোধের ১০০% নিশ্চয়তা!</p>
+                </div>
             </div>
         </div>
 
-        <!-- Products Grid (2 Columns Mobile) -->
-        <div class="product-grid">
+        <!-- 5. Products Section -->
+        <h2 class="section-title">আমাদের প্রোডাক্টসমূহ</h2>
+        <div class="products-grid">
 
             <!-- Product 1 -->
             <div class="product-card">
-                <span class="discount-badge">অফার</span>
+                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="RTR Engine Guard" class="product-img">
                 <div>
-                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="RTR Engine Guard" class="product-img">
-                    <div class="product-title">আরটিআর ইঞ্জিন গার্ড</div>
-                    <div class="product-desc">আপনার বাইকের ইঞ্জিনের সুরক্ষায় এবং আকর্ষণীয় লুক দিতে প্রিমিয়াম গার্ড।</div>
+                    <div class="product-name">আরটিআর ইঞ্জিন গার্ড</div>
+                    <div class="product-desc">প্রিমিয়াম কোয়ালিটি এবং আকর্ষণীয় স্টাইলিশ লুক।</div>
                 </div>
-                <div class="product-footer">
-                    <div class="price-box">
-                        <span class="current-price">৬৯৯ ৳</span>
-                        <span class="old-price">৯৯৯ ৳</span>
-                    </div>
+                <div class="product-bottom">
+                    <span class="price-tag">৬৯৯ ৳</span>
                     <a href="https://wa.me/8801918455755?text=আমি%20RTR%20Engine%20Guard%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
                         অর্ডার <i class="fab fa-whatsapp"></i>
                     </a>
@@ -439,17 +391,13 @@
 
             <!-- Product 2 -->
             <div class="product-card">
-                <span class="discount-badge">অফার</span>
+                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Shark Tyre Guard" class="product-img">
                 <div>
-                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Tyre Guard" class="product-img">
-                    <div class="product-title">শার্ক টায়ার গার্ড</div>
-                    <div class="product-desc">বৃষ্টি ও কাদা থেকে বাইক ও নিজেকে পরিষ্কার রাখতে সেরা টায়ার গার্ড।</div>
+                    <div class="product-name">শার্ক টায়ার গার্ড</div>
+                    <div class="product-desc">বৃষ্টি ও কাদা থেকে বাইক পরিষ্কার রাখার সেরা গার্ড।</div>
                 </div>
-                <div class="product-footer">
-                    <div class="price-box">
-                        <span class="current-price">৩৯৯ ৳</span>
-                        <span class="old-price">৭০০ ৳</span>
-                    </div>
+                <div class="product-bottom">
+                    <span class="price-tag">৩৯৯ ৳</span>
                     <a href="https://wa.me/8801918455755?text=আমি%20Shark%20Tyre%20Guard%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
                         অর্ডার <i class="fab fa-whatsapp"></i>
                     </a>
@@ -458,36 +406,28 @@
 
             <!-- Product 3 -->
             <div class="product-card">
-                <span class="discount-badge">অফার</span>
+                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Engine Flasher" class="product-img">
                 <div>
-                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Engine Flasher" class="product-img">
-                    <div class="product-title">অটো ইঞ্জিন ফ্লাশার</div>
-                    <div class="product-desc">বাইকের সুরক্ষার জন্য অটোমেটিক ও স্মার্ট ইঞ্জিন ফ্লাশার লাইট সিস্টেম।</div>
+                    <div class="product-name">অটো ইঞ্জিন ফ্লাশার</div>
+                    <div class="product-desc">স্মার্ট ও নিরাপদ ড্রাইভিং এর জন্য অটোমেটিক ফ্লাশার।</div>
                 </div>
-                <div class="product-footer">
-                    <div class="price-box">
-                        <span class="current-price">৯৯ ৳</span>
-                        <span class="old-price">১৫০ ৳</span>
-                    </div>
+                <div class="product-bottom">
+                    <span class="price-tag">৯৯ ৳</span>
                     <a href="https://wa.me/8801918455755?text=আমি%20Auto%20Engine%20Flasher%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
                         অর্ডার <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Product 4: VEGA BOLT -->
+            <!-- Product 4 -->
             <div class="product-card">
-                <span class="discount-badge">অফার</span>
+                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="VEGA BOLT" class="product-img">
                 <div>
-                    <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="VEGA BOLT" class="product-img">
-                    <div class="product-title">VEGA BOLT</div>
-                    <div class="product-desc">Vega Helmet – সর্বোচ্চ সুরক্ষা, আধুনিক স্টাইল এবং আরামদায়ক রাইডিংয়ের পারফেক্ট কম্বো!</div>
+                    <div class="product-name">VEGA BOLT</div>
+                    <div class="product-desc">সর্বোচ্চ সুরক্ষা ও স্টাইলিশ ভেগা সার্টিফাইড হেলমেট।</div>
                 </div>
-                <div class="product-footer">
-                    <div class="price-box">
-                        <span class="current-price">২৩০০ ৳</span>
-                        <span class="old-price">২৯৫০ ৳</span>
-                    </div>
+                <div class="product-bottom">
+                    <span class="price-tag">২৩০০ ৳</span>
                     <a href="https://wa.me/8801918455755?text=আমি%20VEGA%20BOLT%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
                         অর্ডার <i class="fab fa-whatsapp"></i>
                     </a>
@@ -498,24 +438,30 @@
 
     </div>
 
-    <!-- Footer with Logo and Contact -->
+    <!-- Floating Social Buttons (Facebook, WhatsApp, TikTok) -->
+    <div class="floating-socials">
+        <a href="https://facebook.com" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/8801918455755" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://tiktok.com" class="social-btn" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <img src="https://i.ibb.co.com/d4Lsk4h4/IMG-20260228-WA0001.jpg" alt="Professor Motors Logo" class="footer-logo-img">
-        <div class="footer-contact">
-            <a href="mailto:professormotorspabna@gmail.com"><i class="fas fa-envelope"></i> professormotorspabna@gmail.com</a>
-            <a href="tel:+8801918455755"><i class="fas fa-phone"></i> +8801918455755</a>
+        <img src="https://i.ibb.co.com/d4Lsk4h4/IMG-20260228-WA0001.jpg" alt="Professor Motors Logo" class="footer-logo">
+        
+        <div class="footer-info">
+            <div class="footer-info-item">
+                <i class="fas fa-envelope"></i> professormotorspabna@gmail.com
+            </div>
+            <div class="footer-info-item footer-address">
+                <i class="fas fa-location-dot"></i> পাবনা টাউন গার্লস স্কুল দোকান নং ১ আব্দুল হামিদ রোড দিলালাপুর পাবনা
+            </div>
         </div>
+
         <div class="copyright">
             &copy; 2026 Professor Motors. All Rights Reserved.
         </div>
     </footer>
-
-    <!-- Floating Social Buttons (Facebook, TikTok, WhatsApp) -->
-    <div class="floating-buttons">
-        <a href="https://facebook.com" class="float-btn fb-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://tiktok.com" class="float-btn tiktok-btn" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/8801918455755" class="float-btn wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
 
 </body>
 </html>
