@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor Motors - প্রিমিয়াম বাইক পার্টস ও অ্যাক্সেসরিজ</title>
+    <title>Professor Motors - প্রিমিয়াম বাইক পার্টস ও মডিফিকেশন আইটেম</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,7 +15,7 @@
         }
 
         body {
-            background-color: #0b0c10;
+            background-color: #0d0f17;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -25,13 +25,21 @@
             color: inherit;
         }
 
+        /* Snake Gradient Animated Announcement Bar */
         .announcement-bar {
-            background: linear-gradient(90deg, #ff0055, #ffaa00, #00ff88);
-            color: #000;
+            background: linear-gradient(90deg, #ff0055, #ffaa00, #00ff88, #ff0055);
+            background-size: 300% 100%;
+            animation: snakeGradient 4s linear infinite;
+            color: #000000;
             text-align: center;
             padding: 6px 10px;
             font-size: 12px;
-            font-weight: bold;
+            font-weight: 800;
+        }
+
+        @keyframes snakeGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
         .wrapper {
@@ -40,15 +48,15 @@
             padding: 10px 15px;
         }
 
-        /* Header & Welcome Section */
-        header {
+        /* 1, 2, 3. Header, Logo & Welcome Section */
+        .top-header {
             text-align: center;
             padding: 10px 5px 15px;
         }
 
-        .main-logo {
-            width: 55px;
-            height: 55px;
+        .top-header img {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             border: 1.5px solid #ff0055;
             margin-bottom: 6px;
@@ -64,10 +72,6 @@
             margin-bottom: 4px;
         }
 
-        .welcome-title span {
-            color: #00ff88;
-        }
-
         .welcome-subtitle {
             font-size: 10px;
             color: #00d2ff;
@@ -75,7 +79,7 @@
             font-weight: 500;
         }
 
-        /* Search Bar */
+        /* 4. Search Bike Accessories */
         .search-box {
             position: relative;
             max-width: 600px;
@@ -102,7 +106,7 @@
             outline: none;
         }
 
-        /* Info Cards */
+        /* 6 & 7. Order Process & Delivery Trust Cards */
         .info-cards {
             display: grid;
             grid-template-columns: 1fr;
@@ -125,11 +129,18 @@
             gap: 12px;
         }
 
-        .card-green { border: 1px solid #00ff88; }
-        .card-orange { border: 1px solid #ffaa00; }
+        .info-card-order-card {
+            border: 1px solid #00ff88;
+        }
 
-        .info-card i {
+        .info-card-trust-card {
+            border: 1px solid #ffaa00;
+        }
+
+        .wa-icon {
             font-size: 20px;
+            background: #003822;
+            color: #00ff88;
             padding: 10px;
             border-radius: 50%;
             min-width: 42px;
@@ -139,8 +150,18 @@
             justify-content: center;
         }
 
-        .card-green i { background: #003822; color: #00ff88; }
-        .card-orange i { background: #382500; color: #ffaa00; }
+        .truck-icon {
+            font-size: 20px;
+            background: #382500;
+            color: #ffaa00;
+            padding: 10px;
+            border-radius: 50%;
+            min-width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .info-card-text h4 {
             font-size: 14px;
@@ -148,8 +169,8 @@
             font-weight: 700;
         }
 
-        .card-green h4 { color: #00ff88; }
-        .card-orange h4 { color: #ffaa00; }
+        .info-card-order-card .info-card-text h4 { color: #00ff88; }
+        .info-card-trust-card .info-card-text h4 { color: #ffaa00; }
 
         .info-card-text p {
             font-size: 11px;
@@ -159,7 +180,7 @@
 
         /* Section Title */
         .section-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #ff0055;
             margin-bottom: 15px;
@@ -190,10 +211,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            cursor: pointer;
         }
 
         .product-card:hover {
             border-color: #ff0055;
+            transform: translateY(-2px);
         }
 
         .product-img {
@@ -214,27 +237,8 @@
         .product-desc {
             font-size: 10px;
             color: #888888;
-            margin-bottom: 6px;
-            line-height: 1.2;
-        }
-
-        .color-label {
-            font-size: 10px;
-            color: #aaa;
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .color-dropdown {
-            width: 100%;
-            padding: 4px;
-            background: #1c1f2e;
-            color: #fff;
-            border: 1px solid #333748;
-            border-radius: 4px;
-            font-size: 11px;
             margin-bottom: 8px;
-            outline: none;
+            line-height: 1.2;
         }
 
         .product-bottom {
@@ -251,22 +255,134 @@
             color: #00ff88;
         }
 
-        .order-btn {
+        .view-btn {
             background: #d60e40;
             color: #ffffff;
             padding: 5px 8px;
             border-radius: 5px;
             font-size: 10px;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 4px;
             border: none;
             cursor: pointer;
         }
 
-        .order-btn:hover {
-            background: #ff0055;
+        /* Popup Product Detail Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 15px;
+        }
+
+        .modal-content {
+            background: #12141d;
+            border: 1px solid #ff0055;
+            border-radius: 12px;
+            max-width: 420px;
+            width: 100%;
+            padding: 15px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #ff0055;
+            cursor: pointer;
+        }
+
+        .modal-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #222533;
+        }
+
+        .modal-title {
+            font-size: 16px;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .modal-subtitle {
+            font-size: 11px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .features-box {
+            background: #0d0f17;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid #222533;
+        }
+
+        .features-box h5 {
+            font-size: 11px;
+            color: #ff0055;
+            margin-bottom: 4px;
+        }
+
+        .features-box ul {
+            list-style: none;
+            font-size: 11px;
+            color: #ccc;
+        }
+
+        .features-box ul li {
+            margin-bottom: 2px;
+        }
+
+        .color-select-box {
+            margin-bottom: 12px;
+        }
+
+        .color-select-box label {
+            font-size: 11px;
+            color: #ffaa00;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .color-select-box select {
+            width: 100%;
+            padding: 8px;
+            background: #1c1f2e;
+            color: #fff;
+            border: 1px solid #ff0055;
+            border-radius: 6px;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .modal-buy-btn {
+            width: 100%;
+            background: #d60e40;
+            color: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
         /* Floating Social Buttons */
@@ -281,14 +397,14 @@
         }
 
         .social-btn {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.4);
         }
 
@@ -305,12 +421,12 @@
         }
 
         .footer-logo {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid #ff0055;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-info {
@@ -329,7 +445,7 @@
         .footer-address {
             color: #888888;
             font-size: 11px;
-            max-width: 350px;
+            max-width: 380px;
             line-height: 1.4;
             padding: 6px 10px;
             background: #12141d;
@@ -338,9 +454,9 @@
         }
 
         .copyright {
-            color: #555555;
-            font-size: 10px;
-            margin-top: 10px;
+            color: #777788;
+            font-size: 11px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -352,37 +468,33 @@
 
     <div class="wrapper">
 
-        <!-- Header & Welcome Section -->
-        <header>
-            <img src="https://i.ibb.co.com/tMmYq8kd/IMG-8124.jpg" alt="Professor Motors Logo" class="main-logo">
-            <h1 class="welcome-title">
-                WELCOME TO <span>প্রফেসর মটরস</span>
-            </h1>
-            <p class="welcome-subtitle">
-                stylish, trendy, ও প্রিমিয়াম জিনিস একমাত্র আমাদের কাছেই পাবেন
-            </p>
+        <!-- 1, 2, 3. Header, Logo & Welcome Section -->
+        <header class="top-header">
+            <img src="https://i.ibb.co.com/tMmYq8kd/IMG-8124.jpg" alt="Professor Motors Logo">
+            <h1 class="welcome-title">Welcome to প্রফেসর মটরস</h1>
+            <p class="welcome-subtitle">stylish, trendy, ও প্রিমিয়াম জিনিস একমাত্র আমাদের কাছেই পাবেন</p>
         </header>
 
-        <!-- Search Bar -->
+        <!-- 4. Search Bike Accessories -->
         <div class="search-box">
             <i class="fas fa-search"></i>
             <input type="text" class="search-input" placeholder="Search bike accessories...">
         </div>
 
-        <!-- Info Cards -->
+        <!-- 6 & 7. Order Process & Delivery Trust Cards -->
         <div class="info-cards">
-            <div class="info-card card-green">
-                <i class="fab fa-whatsapp"></i>
+            <div class="info-card info-card-order-card">
+                <i class="fab fa-whatsapp wa-icon"></i>
                 <div class="info-card-text">
                     <h4>কিভাবে অর্ডার করবেন?</h4>
-                    <p>প্রোডাক্ট সিলেক্ট করুন এবং একদম সহজে এক ক্লিকে হোয়াটসঅ্যাপে ক্লিক করে অর্ডার কনফার্ম করুন।</p>
+                    <p>প্রোডাক্ট সিলেক্ট করুন এবং একদম সহজে এক ক্লিকে হোয়াটসঅ্যাপে ক্লিক করে অর্ডার করুন</p>
                 </div>
             </div>
-            <div class="info-card card-orange">
-                <i class="fas fa-truck-fast"></i>
+            <div class="info-card info-card-trust-card">
+                <i class="fas fa-truck-fast truck-icon"></i>
                 <div class="info-card-text">
-                    <h4>নিরাপদ ডেলিভারি সুবিধা</h4>
-                    <p>শুধু Delivery Charge দিয়ে প্রোডাক্ট হাতে পেয়ে চেক করে টাকা পরিশোধের ১০০% নিশ্চয়তা!</p>
+                    <h4>ক্যাশ অন ডেলিভারি</h4>
+                    <p>ডেলিভারি চার্জ দিয়ে প্রোডাক্ট হাতে পেয়ে টাকা দেওয়ার ১০০% সুযোগ</p>
                 </div>
             </div>
         </div>
@@ -392,93 +504,89 @@
         <div class="products-grid">
 
             <!-- Product 1 -->
-            <div class="product-card">
-                <img src="https://i.ibb.co.com/27srp3Gm/E32-AC14-B-2-B34-491-D-A8-CD-6-B41-CABF1043.jpg" alt="RTR Engine Guard" class="product-img">
-                <div>
-                    <div class="product-name">RTR ENGINE GUARD</div>
-                    <div class="product-desc">প্রিমিয়াম কোয়ালিটি এবং আকর্ষণীয় লুক।</div>
-                    
-                    <span class="color-label">Select Color:</span>
-                    <select id="color1" class="color-dropdown">
-                        <option value="Black">Black</option>
-                        <option value="White">White</option>
-                        <option value="Candy Red">Candy Red</option>
-                        <option value="Blue">Blue</option>
-                    </select>
-                </div>
-                <div class="product-bottom">
-                    <span class="price-tag">৬৯৯ ৳</span>
-                    <button onclick="sendOrder('আরটিআর ইঞ্জিন গার্ড', '৬৯৯ ৳', 'color1')" class="order-btn">
-                        BUY NOW <i class="fab fa-whatsapp"></i>
-                    </button>
-                </div>
-            </div>
-
+           <!-- Product 1 -->
+<div class="product-card" onclick="openProduct('RTR ENGINE GUARD', 'https://i.ibb.co.com/27srp3Gm/E32-AC14-B-2-B34-491-D-AB-CD-6-B41-CABF1043.jpg', '৬৯৯ ৳', 'প্রিমিয়াম কোয়ালিটি এবং আকর্ষণীয় লুক।', ['High Quality Plastic', 'Sporty Look', 'Easy Fitting'], ['Black', 'White', 'Candy Red', 'Blue'])" style="position: relative;">
+    <span style="position: absolute; top: 8px; left: 8px; background: #ff0055; color: #fff; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; z-index: 2;">20% OFF</span>
+    <img src="https://i.ibb.co.com/27srp3Gm/E32-AC14-B-2-B34-491-D-A8-CD-6-B41-CABF1043.jpg" alt="RTR Engine Guard" class="product-img">
+    <div>
+        <div class="product-name">RTR ENGINE GUARD</div>
+        <div class="product-desc">প্রিমিয়াম কোয়ালিটি এবং আকর্ষণীয় লুক।</div>
+    </div>
+    <div class="product-bottom">
+        <div>
+            <span style="font-size: 10px; color: #888; text-decoration: line-through; display: block;">৮৫০ ৳</span>
+            <span class="price-tag">৬৯৯ ৳</span>
+        </div>
+        <button class="view-btn">BUY NOW <i class="fab fa-whatsapp"></i></button>
+    </div>
+</div>
             <!-- Product 2 -->
-            <div class="product-card">
+            <div class="product-card" onclick="openProduct('শার্ক টায়ার গার্ড', 'https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg', '৩৯৯ ৳', 'বৃষ্টি ও কাদা থেকে বাইক পরিষ্কার রাখার গার্ড।', ['Strong Body', 'Mud Protection', 'Perfect Fit'], ['Black', 'White'])">
                 <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Shark Tyre Guard" class="product-img">
                 <div>
                     <div class="product-name">শার্ক টায়ার গার্ড</div>
                     <div class="product-desc">বৃষ্টি ও কাদা থেকে বাইক পরিষ্কার রাখার গার্ড।</div>
-                    
-                    <span class="color-label">Select Color:</span>
-                    <select id="color2" class="color-dropdown">
-                        <option value="Black">Black</option>
-                        <option value="White">White</option>
-                    </select>
                 </div>
                 <div class="product-bottom">
                     <span class="price-tag">৩৯৯ ৳</span>
-                    <button onclick="sendOrder('শার্ক টায়ার গার্ড', '৩৯৯ ৳', 'color2')" class="order-btn">
-                        BUY NOW <i class="fab fa-whatsapp"></i>
-                    </button>
+                    <button class="view-btn">BUY NOW <i class="fab fa-whatsapp"></i></button>
                 </div>
             </div>
 
             <!-- Product 3 -->
-            <div class="product-card">
+            <div class="product-card" onclick="openProduct('অটো ইঞ্জিন ফ্লাশার', 'https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg', '৯৯ ৳', 'স্মার্ট ও নিরাপদ ড্রাইভিং এর জন্য ফ্লাশার।', ['Waterproof', 'Easy Setup'], ['Standard'])">
                 <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Engine Flasher" class="product-img">
                 <div>
                     <div class="product-name">অটো ইঞ্জিন ফ্লাশার</div>
                     <div class="product-desc">স্মার্ট ও নিরাপদ ড্রাইভিং এর জন্য ফ্লাশার।</div>
-                    
-                    <span class="color-label">Select Color:</span>
-                    <select id="color3" class="color-dropdown">
-                        <option value="Standard">Standard</option>
-                    </select>
                 </div>
                 <div class="product-bottom">
                     <span class="price-tag">৯৯ ৳</span>
-                    <button onclick="sendOrder('অটো ইঞ্জিন ফ্লাশার', '৯৯ ৳', 'color3')" class="order-btn">
-                        BUY NOW <i class="fab fa-whatsapp"></i>
-                    </button>
+                    <button class="view-btn">BUY NOW <i class="fab fa-whatsapp"></i></button>
                 </div>
             </div>
 
             <!-- Product 4 -->
-            <div class="product-card">
+            <div class="product-card" onclick="openProduct('VEGA BOLT Helmet', 'https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg', '২৩০০ ৳', 'সর্বোচ্চ সুরক্ষা ও স্টাইলিশ হেলমেট।', ['DOT Certified', 'Scratch Resistant Visor', 'Lightweight'], ['Matt Black', 'Glossy Black', 'Red/Black'])">
                 <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="VEGA BOLT" class="product-img">
                 <div>
                     <div class="product-name">VEGA BOLT</div>
                     <div class="product-desc">সর্বোচ্চ সুরক্ষা ও স্টাইলিশ হেলমেট।</div>
-                    
-                    <span class="color-label">Select Color:</span>
-                    <select id="color4" class="color-dropdown">
-                        <option value="Matt Black">Matt Black</option>
-                        <option value="Glossy Black">Glossy Black</option>
-                        <option value="Red/Black">Red/Black</option>
-                    </select>
                 </div>
                 <div class="product-bottom">
                     <span class="price-tag">২৩০০ ৳</span>
-                    <button onclick="sendOrder('VEGA BOLT Helmet', '২৩০০ ৳', 'color4')" class="order-btn">
-                        BUY NOW <i class="fab fa-whatsapp"></i>
-                    </button>
+                    <button class="view-btn">BUY NOW <i class="fab fa-whatsapp"></i></button>
                 </div>
             </div>
 
         </div>
 
+    </div>
+
+    <!-- Product Detail Popup Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeProduct()">&times;</span>
+            <img src="" id="mImg" class="modal-img">
+            <h3 id="mTitle" class="modal-title"></h3>
+            <p id="mSub" class="modal-subtitle"></p>
+
+            <div class="features-box">
+                <h5>FEATURES</h5>
+                <ul id="mFeatures"></ul>
+            </div>
+
+            <div class="color-select-box">
+                <label>AVAILABLE COLOURS:</label>
+                <select id="mColor"></select>
+            </div>
+
+            <div style="font-size: 16px; font-weight: bold; color: #00ff88; margin-bottom: 12px;" id="mPrice"></div>
+
+            <button class="modal-buy-btn" onclick="buyModalProduct()">
+                BUY NOW <i class="fab fa-whatsapp"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Floating Social Buttons -->
@@ -491,27 +599,49 @@
     <!-- Footer -->
     <footer>
         <img src="https://i.ibb.co.com/tMmYq8kd/IMG-8124.jpg" alt="Professor Motors Logo" class="footer-logo">
-        
         <div class="footer-info">
-            <div class="footer-info-item">
-                <i class="fas fa-envelope"></i> professormotorspabna@gmail.com
-            </div>
-            <div class="footer-info-item footer-address">
-                📍 পাবনা টাউন গার্লস স্কুল দোকান নং ১ আব্দুল হামিদ রোড দিলালাপুর পাবনা
-            </div>
+            <div class="footer-info-item"><i class="fas fa-envelope"></i> professormotorspabna@gmail.com</div>
+            <div class="footer-address">📍 পাবনা টাউন গার্লস স্কুল দোকান নং ১ আব্দুল হামিদ রোড দিলালাপুর পাবনা</div>
         </div>
-
-        <div class="copyright">
-            &copy; 2026 Professor Motors. All Rights Reserved.
-        </div>
+        <div class="copyright">&copy; 2026 Professor Motors. All Rights Reserved.</div>
     </footer>
 
-    <!-- Order Function -->
+    <!-- Modal Script -->
     <script>
-        function sendOrder(productName, price, selectId) {
-            let color = document.getElementById(selectId).value;
+        let curTitle = "", curPrice = "";
+
+        function openProduct(title, img, price, sub, features, colors) {
+            curTitle = title;
+            curPrice = price;
+
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mImg').src = img;
+            document.getElementById('mPrice').innerText = price;
+            document.getElementById('mSub').innerText = sub;
+
+            let featUl = document.getElementById('mFeatures');
+            featUl.innerHTML = "";
+            features.forEach(f => {
+                featUl.innerHTML += `<li>✓ ${f}</li>`;
+            });
+
+            let colSel = document.getElementById('mColor');
+            colSel.innerHTML = "";
+            colors.forEach(c => {
+                colSel.innerHTML += `<option value="${c}">${c}</option>`;
+            });
+
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeProduct() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        function buyModalProduct() {
+            let selectedColor = document.getElementById('mColor').value;
             let phone = "8801918455755";
-            let text = `হ্যালো প্রফেসর মটরস,%0Aআমি একটি প্রোডাক্ট অর্ডার করতে চাই।%0A%0A📦 **প্রোডাক্ট:** ${productName}%0A🎨 **কালার:** ${color}%0A💰 **দাম:** ${price}`;
+            let text = `হ্যালো প্রফেসর মটরস,%0Aআমি একটি প্রোডাক্ট অর্ডার করতে চাই।%0A%0A📦 **প্রোডাক্ট:** ${curTitle}%0A🎨 **কালার:** ${selectedColor}%0A💰 **দাম:** ${curPrice}`;
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
         }
     </script>
