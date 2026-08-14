@@ -405,99 +405,48 @@
         🔥 প্রফেশনাল বাইক পার্টস ও মডিফিকেশন আইটেম - ক্যাশ অন ডেলিভারি!
     </div>
 
-    <div class="wrapper">
+    <!-- Products Section with Color Option -->
+<div class="products-grid">
 
-        <!-- 1, 2, 3. Header, Logo & Welcome Section -->
-        <header class="top-header">
-            <img src="https://i.ibb.co.com/tMmYq8kd/IMG-8124.jpg" alt="Professor Motors Logo" class="main-logo">
-            <h1 class="welcome-title">Welcome to প্রফেসর মটরস</h1>
-            <p class="welcome-subtitle">stylish, trendy, ও প্রিমিয়াম জিনিস একমাত্র আমাদের কাছেই পাবেন</p>
-        </header>
+    <!-- RTR Engine Guard Product Card -->
+    <div class="product-card" style="background: #111; border: 1px solid #222; border-radius: 12px; padding: 12px;">
+        <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="RTR Engine Guard" style="width: 100%; border-radius: 8px;">
+        
+        <h3 style="font-size: 15px; margin: 8px 0 4px; color: #fff;">RTR ENGINE GUARD</h3>
+        <p style="font-size: 11px; color: #888; margin-bottom: 10px;">Premium Protection & Sporty Style</p>
 
-        <!-- 4. Search Bike Accessories -->
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" class="search-input" placeholder="Search bike accessories...">
+        <!-- Color Selection -->
+        <div style="margin-bottom: 12px;">
+            <label style="font-size: 11px; color: #aaa; display: block; margin-bottom: 4px;">Select Color:</label>
+            <select id="colorSelect1" style="width: 100%; padding: 6px; background: #222; color: #fff; border: 1px solid #444; border-radius: 6px; font-size: 12px; outline: none;">
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Candy Red">Candy Red</option>
+                <option value="Blue">Blue</option>
+            </select>
         </div>
 
-        <!-- 6 & 7. Order Process & Delivery Trust Cards -->
-        <div class="info-cards">
-            <div class="info-card order-card">
-                <i class="fab fa-whatsapp wa-icon"></i>
-                <div class="info-card-text">
-                    <h4>কিভাবে অর্ডার করবেন?</h4>
-                    <p>প্রোডাক্ট সিলেক্ট করুন এবং একদম সহজে এক ক্লিকে হোয়াটসঅ্যাপে ক্লিক করে অর্ডার কনফার্ম করুন।</p>
-                </div>
-            </div>
-            <div class="info-card trust-card">
-                <i class="fas fa-truck-fast truck-icon"></i>
-                <div class="info-card-text">
-                    <h4>নিরাপদ ডেলিভারি সুবিধা</h4>
-                    <p>শুধু Delivery Charge দিয়ে প্রোডাক্ট হাতে পেয়ে চেক করে টাকা পরিশোধের ১০০% নিশ্চয়তা!</p>
-                </div>
-            </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding-top: 8px;">
+            <span style="font-size: 14px; font-weight: bold; color: #00ff88;">৬৯৯ ৳</span>
+            <button onclick="orderProduct('RTR Engine Guard', '৬৯৯ ৳', 'colorSelect1')" style="background: #d60e40; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;">
+                BUY NOW <i class="fab fa-whatsapp"></i>
+            </button>
         </div>
+    </div>
 
-        <!-- 5. Products Section -->
-        <h2 class="section-title">আমাদের প্রোডাক্টসমূহ</h2>
-        <div class="products-grid">
+</div>
 
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="RTR Engine Guard" class="product-img">
-                <div>
-                    <div class="product-name">আরটিআর ইঞ্জিন গার্ড</div>
-                    <div class="product-desc">প্রিমিয়াম কোয়ালিটি এবং আকর্ষণীয় স্টাইলিশ লুক।</div>
-                </div>
-                <div class="product-bottom">
-                    <span class="price-tag">৬৯৯ ৳</span>
-                    <a href="https://wa.me/8801918455755?text=আমি%20RTR%20Engine%20Guard%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
-                        অর্ডার <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Shark Tyre Guard" class="product-img">
-                <div>
-                    <div class="product-name">শার্ক টায়ার গার্ড</div>
-                    <div class="product-desc">বৃষ্টি ও কাদা থেকে বাইক পরিষ্কার রাখার সেরা গার্ড।</div>
-                </div>
-                <div class="product-bottom">
-                    <span class="price-tag">৩৯৯ ৳</span>
-                    <a href="https://wa.me/8801918455755?text=আমি%20Shark%20Tyre%20Guard%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
-                        অর্ডার <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="Engine Flasher" class="product-img">
-                <div>
-                    <div class="product-name">অটো ইঞ্জিন ফ্লাশার</div>
-                    <div class="product-desc">স্মার্ট ও নিরাপদ ড্রাইভিং এর জন্য অটোমেটিক ফ্লাশার।</div>
-                </div>
-                <div class="product-bottom">
-                    <span class="price-tag">৯৯ ৳</span>
-                    <a href="https://wa.me/8801918455755?text=আমি%20Auto%20Engine%20Flasher%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
-                        অর্ডার <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="https://i.ibb.co.com/SwVH5LS6/D0-A59-D0-E-88-E1-4-AFC-825-C-03681-C4-A0784.jpg" alt="VEGA BOLT" class="product-img">
-                <div>
-                    <div class="product-name">VEGA BOLT</div>
-                    <div class="product-desc">সর্বোচ্চ সুরক্ষা ও স্টাইলিশ ভেগা সার্টিফাইড হেলমেট।</div>
-                </div>
-                <div class="product-bottom">
-                    <span class="price-tag">২৩০০ ৳</span>
-                    <a href="https://wa.me/8801918455755?text=আমি%20VEGA%20BOLT%20অর্ডার%20করতে%20চাই" target="_blank" class="order-btn">
-                        অর্ডার <i class="fab fa-whatsapp"></i>
+<!-- WhatsApp Script (ঠিক </body> ট্যাগের উপরে বসাবেন) -->
+<script>
+    function orderProduct(productName, price, selectId) {
+        let selectedColor = document.getElementById(selectId).value;
+        let phone = "8801918455755";
+        
+        let text = `হ্যালো প্রফেসর মটরস,%0Aআমি একটি প্রোডাক্ট অর্ডার করতে চাই।%0A%0A📦 **প্রোডাক্ট:** ${productName}%0A🎨 **কালার:** ${selectedColor}%0A💰 **দাম:** ${price}`;
+        
+        window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+</script>
                     </a>
                 </div>
             </div>
