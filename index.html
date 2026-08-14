@@ -86,55 +86,94 @@
             text-transform: uppercase;
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 30px 15px 20px;
-            background: radial-gradient(circle at center, rgba(229, 9, 20, 0.15) 0%, rgba(13, 14, 18, 0) 70%);
-        }
-
-        .hero h1 {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: #ffffff;
-        }
-
-        .hero h1 span {
-            color: #ff0055;
-        }
-
-        .hero p {
-            color: #aaa;
-            font-size: 12px;
-            margin-bottom: 20px;
-        }
-
-        /* Products Grid Setup (Mobile 2 Columns) */
-        .products-section {
-            padding: 20px 3% 40px;
+        /* Search & Info Container */
+        .main-container {
+            padding: 15px 5%;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
+        /* Search Box Style */
+        .search-box {
             position: relative;
+            margin-bottom: 15px;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: #ff0055;
-            margin: 6px auto 0;
-            border-radius: 2px;
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 14px;
         }
 
+        .search-input {
+            width: 100%;
+            padding: 12px 15px 12px 42px;
+            background: #14161d;
+            border: 1px solid #282b36;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: #ff0055;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
+        }
+
+        /* Product Count Header */
+        .product-count {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .product-count span {
+            color: #fff;
+            font-weight: 800;
+        }
+
+        /* Features Cards (3 Items Stack) */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            background: #12141a;
+            border: 1px solid #222530;
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        .feature-item h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .feature-item h3 i {
+            color: #ff0055;
+            font-size: 13px;
+        }
+
+        .feature-item p {
+            font-size: 11px;
+            color: #7a8092;
+            padding-left: 21px;
+        }
+
+        /* Products Grid Setup (Mobile 2 Columns) */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -145,6 +184,11 @@
             .product-grid {
                 grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
                 gap: 20px;
+            }
+
+            .features-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -342,14 +386,36 @@
         </a>
     </div>
 
-    <div class="hero">
-        <h1>আপনার বাইকের জন্য <span>সেরা পার্টস</span></h1>
-        <p>গুণমান ও নিরাপত্তার সেরা নিশ্চয়তা</p>
-    </div>
+    <div class="main-container">
 
-    <section class="products-section" id="products">
-        <h2 class="section-title">আমাদের প্রডাক্টসমূহ</h2>
-        
+        <!-- Search Bar -->
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" placeholder="Search bike accessories...">
+        </div>
+
+        <!-- Product Count -->
+        <div class="product-count">
+            <span>4</span> products
+        </div>
+
+        <!-- 3 Feature Badges -->
+        <div class="features-list">
+            <div class="feature-item">
+                <h3><i class="fas fa-check"></i> Premium Quality</h3>
+                <p>Selected accessories</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-bangladeshi-taka-sign"></i> Budget Friendly</h3>
+                <p>Fair prices in BD</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="fas fa-bolt"></i> Fast Response</h3>
+                <p>Order via WhatsApp</p>
+            </div>
+        </div>
+
+        <!-- Products Grid (2 Columns Mobile) -->
         <div class="product-grid">
 
             <!-- Product 1 -->
@@ -429,7 +495,8 @@
             </div>
 
         </div>
-    </section>
+
+    </div>
 
     <!-- Footer with Logo and Contact -->
     <footer>
