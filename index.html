@@ -5,18 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professor Motors - প্রিমিয়াম বাইক পার্টস ও অ্যাক্সেসরিজ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 
+           General Reset & Animations
+           সব এলিমেন্টে স্মুথ ট্রানজিশন যুক্ত করা হয়েছে
+        */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease-in-out; /* সব পরিবর্তনের জন্য স্মুথ ট্রানজিশন */
+        }
+
+        html {
+            scroll-behavior: smooth; /* সেকশনে যাওয়ার সময় ধীরে যাবে */
         }
 
         body {
             background: #0d0e12;
             color: #ffffff;
             overflow-x: hidden;
+            animation: fadeInBody 1s ease-in; /* পুরো পেইড লোড হওয়ার সময় ফেইড-ইন */
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Top Announcement Bar */
@@ -28,9 +44,11 @@
             font-size: 12px;
             font-weight: bold;
             letter-spacing: 0.5px;
+            position: relative;
+            z-index: 101;
         }
 
-        /* Navbar */
+        /* Navbar with Header Animation */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -42,6 +60,12 @@
             z-index: 100;
             border-bottom: 1px solid #222;
             backdrop-filter: blur(8px);
+            animation: slideDown 0.8s ease-out; /* ওপর থেকে নিচে আসার অ্যানিমেশন */
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
         .logo-box {
@@ -52,14 +76,14 @@
         }
 
         .nav-logo-img {
-            height: 30px; /* লোগো ছোট করা হয়েছে */
+            height: 30px;
             width: auto;
             border-radius: 4px;
             object-fit: contain;
         }
 
         .logo-text {
-            font-size: 15px; /* নাম ছোট করা হয়েছে */
+            font-size: 15px;
             font-weight: 800;
             background: linear-gradient(45deg, #ff0055, #ffaa00);
             -webkit-background-clip: text;
@@ -78,6 +102,12 @@
             text-align: center;
             padding: 30px 15px 20px;
             background: radial-gradient(circle at center, rgba(229, 9, 20, 0.15) 0%, rgba(13, 14, 18, 0) 70%);
+            animation: fadeInHero 1.2s ease-out; /* হিরো সেকশন ধীরে লোড হবে */
+        }
+
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .tagline-badge {
@@ -122,7 +152,12 @@
             font-weight: bold;
             font-size: 13px;
             box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
-            transition: 0.3s;
+            transform: scale(1);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05); /* মাউস রাখলে বড় হবে */
+            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
         }
 
         /* Features Section */
@@ -141,7 +176,18 @@
             padding: 12px 8px;
             border-radius: 10px;
             text-align: center;
+            animation: fadeInCard 0.8s ease-out both; /* ফিচার কার্ড লোড হওয়ার অ্যানিমেশন */
         }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* প্রত্যেকটি ফিচার কার্ডকে আলাদা সময়ে লোড করার জন্য */
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
 
         .feature-card i {
             font-size: 20px;
@@ -154,7 +200,7 @@
             color: #fff;
         }
 
-        /* Products Grid */
+        /* Products Grid with Entrance Animation */
         .products-section {
             padding: 20px 5% 40px;
             max-width: 1000px;
@@ -195,6 +241,14 @@
             justify-content: space-between;
             position: relative;
             overflow: hidden;
+            animation: fadeInCard 1s ease-out both; /* প্রোডাক্ট কার্ড ধীরে ধীরে ভেসে উঠবে */
+        }
+
+        /* প্রোডাক্ট কার্ডে মাউস রাখলে কালার পরিবর্তন ও হালকা ওপরে উঠবে */
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff0055;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .discount-badge {
@@ -259,6 +313,7 @@
             font-size: 11px;
         }
 
+        /* Pulsing Order Button */
         .order-btn {
             background: linear-gradient(45deg, #25d366, #128c7e);
             color: #fff;
@@ -270,6 +325,19 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            animation: pulse 2s infinite; /* বাটনটি হালকাভাবে কাঁপবে */
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .order-btn:hover {
+            animation: none; /* মাউস রাখলে কাঁপবে না */
+            background: linear-gradient(45deg, #128c7e, #25d366);
+            transform: scale(1.05);
         }
 
         /* Order Process Section */
@@ -277,7 +345,8 @@
             background: #12141a;
             padding: 25px 5%;
             margin: 30px 0;
-            border-y: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
             text-align: center;
         }
 
@@ -290,6 +359,7 @@
 
         .process-step {
             padding: 10px;
+            animation: fadeInCard 1s ease-out both; /* লোড অ্যানিমেশন */
         }
 
         .process-step i {
@@ -349,7 +419,7 @@
             font-size: 11px;
         }
 
-        /* Floating Social Buttons */
+        /* Floating Social Buttons with Hover Animation */
         .floating-buttons {
             position: fixed;
             bottom: 20px;
@@ -371,6 +441,12 @@
             font-size: 20px;
             text-decoration: none;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transform: scale(1);
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1) translateY(-5px); /* মাউস রাখলে সুন্দরভাবে বড় ও ওপরে উঠবে */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.7);
         }
 
         .fb-btn { background-color: #1877f2; }
